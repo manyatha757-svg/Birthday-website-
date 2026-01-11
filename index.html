@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unlock Your Birthday 🎂</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fde68a, #fbcfe8, #bfdbfe);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    input {
+      padding: 8px;
+      width: 80%;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 12px;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 999px;
+      background: #fbcfe8;
+      cursor: pointer;
+    }
+    .msg {
+      margin-top: 15px;
+      color: #ef4444;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box" id="game">
+  <h2>Riddle 1 🧩</h2>
+  <p>What comes once in a minute, twice in a moment, but never in a thousand years?</p>
+  <input id="answer" placeholder="type your answer">
+  <button onclick="check()">Submit</button>
+  <p class="msg" id="msg"></p>
+</div>
+
+<script>
+let level = 1;
+
+function check() {
+  const ans = document.getElementById("answer").value.toLowerCase();
+  const msg = document.getElementById("msg");
+
+  if (level === 1 && ans === "m") {
+    level = 2;
+    next("Riddle 2 🧩",
+      "What has a heart that doesn’t beat?",
+      "");
+  } 
+  else if (level === 2 && ans === "artichoke") {
+    level = 3;
+    next("Final Riddle 🤍",
+      "Who made this website for you?",
+      "");
+  } 
+  else if (level === 3 && (ans === "you" || ans === "my best friend")) {
+    document.getElementById("game").innerHTML = `
+      <h1>🎉 Happy 18th 🎉</h1>
+      <p>
+        I’m really glad you exist.<br>
+        Thank you for being my person 🤍
+      </p>`;
+  } 
+  else {
+    msg.innerText = "not quite 👀 try again";
+  }
+}
+
+function next(title, text, message) {
+  document.querySelector("h2").innerText = title;
+  document.querySelector("p").innerText = text;
+  document.getElementById("answer").value = "";
+  document.getElementById("msg").innerText = message;
+}
+</script>
+
+</body>
+  </html>
+  
