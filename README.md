@@ -138,7 +138,7 @@ function check() {
         🥳 Bazinga!! You cracked them all 😌!!<br><br>
         🎂 Happiesttt birthday Ashweeeeeen !!! 💖<br>
         ✨ Always be your gorgeous self you are ✨<br><br>
-        🫶 (Thank you for everything!!!<br>
+         (Thank you for everything!!!<br>
         and sorry because you have a dumb bestfriend..) 😭💗
       </p>`;
   }
